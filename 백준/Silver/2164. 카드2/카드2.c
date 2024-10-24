@@ -4,7 +4,7 @@ int main(void){
 	int n;
 	int s = 0;
 	scanf("%d", &n);
-	for (int i = 0; i < n+n; i++) {
+	for (int i = 0; i < n; i++) {
 		x[i] = i + 1;
 	}
 	for (int i = 0; i < n-1; i++) {
