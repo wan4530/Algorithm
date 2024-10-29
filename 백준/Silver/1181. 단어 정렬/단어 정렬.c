@@ -2,7 +2,6 @@
 #include <stdlib.h>
 char w[200001][51];
 int cmp(const void* a, const void* b) {
-	int jud = 0;
 	if (strlen((char*)a) == strlen((char*)b)) {
 		return strcmp((char*)a, (char*)b);
 	}
