@@ -8,7 +8,7 @@ int main(void) {
 	scanf("%d", &t);
 	for (int i = 0; i < t; i++) {
 		int n, m;
-		PR pr[901] = { 0 };
+		PR pr[500] = { 0 };
 		PR bfr[101] = { 0 };
 		scanf("%d %d", &n, &m);
 
