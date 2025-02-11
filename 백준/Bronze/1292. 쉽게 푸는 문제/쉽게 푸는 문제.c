@@ -5,19 +5,13 @@ int main(void) {
 	scanf("%d %d", &s, &e);
 	int i = 0, k = 1;
 	int sum = 0;
-	while (1) {
+	while (i<e) {
 		for (int j = 0; j < k; j++) {
 			arr[i] = k;
-			if (i >= s-1) {
+			if (i >= s-1 && i<e) {
 				sum+=k;
 			}
 			i++;
-			if (i >= e) {
-				break;
-			}
-		}
-		if (i >= e) {
-			break;
 		}
 		k++;
 	}
