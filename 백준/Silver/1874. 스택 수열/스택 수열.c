@@ -14,7 +14,6 @@ int main(void) {
 	cpy[h] = j;
 	m[0] = '+';
 	for (int i = 1; i < 2*n; i++) {
-		//printf("%d\t%d\n", cpy[h], arr[k]);
 		if (arr[k] == cpy[h]) {
 			k++;
 			h--;
