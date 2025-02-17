@@ -3,8 +3,9 @@ int graph[101][101];
 int dfs[101];
 void f_dfs(int v, int n, int* sum) {
 	dfs[v] = 1;
-	*(sum) += 1;
-	//printf("%d\n", *sum);
+	if (v != 1) {
+		*(sum) += 1;
+	}
 	for (int i = 1; i <= n; i++) {
 		if (graph[v][i] == 1 && dfs[i] == 0) {
 			f_dfs(i, n, sum);
@@ -25,5 +26,5 @@ int main() {
 	int ans = 0;
 	int* pans = &ans;
 	f_dfs(1, n, pans);
-	printf("%d", ans - 1);
+	printf("%d", ans);
 }
