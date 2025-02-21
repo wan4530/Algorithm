@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 int array[1000000][3];
-
-int cmp(const int* a, const int* b) {
+int cmp_f(const int* a, const int* b) {
 	return *a - *b;
 }
 int cmp_s(const int* a, const int* b) {
@@ -11,19 +10,11 @@ int cmp_s(const int* a, const int* b) {
 int main(void) {
 	int n, m;
 	scanf("%d", &n);
-	int max = 0;
 	for (int i = 0; i < n; i++) {
 		scanf("%d", &array[i][0]);
-		if (i == n - 2) {
-			max = array[i][0];
-		}
 		array[i][1] = i;
 	}
-	qsort(array, n, sizeof(array[0]), cmp);
-	for (int i = 0; i < n; i++) {
-		//printf("%d ", array[i][0]);
-	}
-	//printf("\n");
+	qsort(array, n, sizeof(array[0]), cmp_f);
 	int k = 0;
 	int temp = array[0][0];
 	for (int i = 0; i < n; i++) {
