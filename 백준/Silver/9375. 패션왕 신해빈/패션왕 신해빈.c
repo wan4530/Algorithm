@@ -5,8 +5,8 @@ typedef struct {
 	char c[21];
 	char tc[21];
 }haebin;
-int cmp(const void* a,const void* b) {
-	return strcmp(((haebin*)a)->tc, ((haebin*)b)->tc);
+int cmp(const haebin* a,const haebin* b) {
+	return strcmp(a->tc, b->tc);
 }
 int main(void) {
 	int t;
