@@ -1,42 +1,39 @@
-#include<stdio.h>
-#include<math.h>
-
-double getDistance(double x,double X,double y,double Y) {
-	return sqrt((x - X) * (x - X) + (y - Y) * (y - Y));
-}
-
-int main() {
-	int t;
-	double x, y, r, X, Y, R;
-	scanf("%d", &t);
-	for (int i = 0; i < t; i++) {
-		scanf("%lf %lf %lf %lf %lf %lf", &x, &y, &r, &X, &Y, &R);
-
-		if (r < R) {
-			double t = r;
-			r = R;
-			R = t;
+#include <stdio.h>
+#include <math.h>
+int main(void) {
+	int n;
+	scanf("%d", &n);
+	for (int i = 0; i < n; i++) {
+		double x1, y1, r1, x2, y2, r2;
+		scanf("%lf %lf %lf %lf %lf %lf", &x1, &y1, &r1, &x2, &y2, &r2);
+		double large;
+		double small;
+		if (r1 > r2) {
+			large = r1;
+			small = r2;
 		}
-
-		float d = getDistance(x, X, y, Y);
-
-		if (x == X && y == Y && r == R) {
-			printf("-1\n");
+		else {
+			large = r2;
+			small = r1;
 		}
-		else if (r + R < d) {
+		double distance_two_point = sqrt(pow((x2 - x1), 2) + pow((y2 - y1), 2));
+		if (distance_two_point == 0) {
+			if (r1 == r2) {
+				printf("-1\n");
+			}
+			else {
+				printf("0\n");
+			}
+		}
+		else if (distance_two_point > r1 + r2 || large - small > distance_two_point) {
 			printf("0\n");
 		}
-		else if ((r + R)* (r + R) == (x - X) * (x - X) + (y - Y) * (y - Y)) {
+		else if (r1 + r2 == distance_two_point || large - small == distance_two_point) {
 			printf("1\n");
 		}
-		else if (r - R < d && r + R > d) {
+		else if(large - small < distance_two_point && distance_two_point < r1 + r2){
 			printf("2\n");
 		}
-		else if ((r - R) * (r - R) == (x - X) * (x - X) + (y - Y) * (y - Y)) {
-			printf("1\n");
-		}
-		else if (r - R > d) {
-			printf("0\n");
-		}
 	}
+	return 0;
 }
