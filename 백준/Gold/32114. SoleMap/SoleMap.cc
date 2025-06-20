@@ -2,10 +2,10 @@
 
 using namespace std;
 typedef long long ll;
-ll arr[500001];
-ll lane[500001];
-ll car[500001];
-ll ans[500001];
+ll arr[500000];
+ll lane[500000];
+ll car[500000];
+ll ans[500000];
 int main() {
 	cin.tie(NULL);
 	cout.tie(NULL);
